@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+  		#canvas_circle{
+      	margin:100px 130px;
+      }
+		#left p a{
+			text-decoration: none;
+			color:#000;
+		}
+		#font,#btn1,#lineWidth,#btn3{
+		   width:60px;
+		   height:25px;
+		   border:2px solid #ccc;
+	       position:absolute;
+		   left:340px;
+		   top:18px;
+	    }
+	    #font{
+	    	width:80px;
+	    }
+	  #btn1{
+		  width:80px;
+	      left:430px;
+	   }
+
+	   #lineWidth{
+		   width:65px;
+		   height:20px;
+		   left:560px;
+		}
+	  #btn3{
+		 width:80px;
+	     left:636px;
+	  }
+	  
+	    #canvas{
+		    width:900px;
+			height:500px;
+			position:relative;
+			left:220px;
+			border:1px solid #669;
+		}
+		 #left{
+		    width:120px;
+			height:100%;
+			border-right:1px solid #669;
+			float:left;
+		}
+		#line-chart,#pie-chart,#carte-chart{
+		    width:90px;
+			height:50px;
+			line-height:30px;
+			font-size:18px;
+			font-weight:bold;
+			padding-left:30px;
+			border-bottom:1px solid #669;
+			/*background:rgb(105,196,65);*/
+		}
+		#myCanvas{
+		    position:relative;
+			top:120px;
+			left:80px;
+		}
+	  .one{
+	      margin:120px 200px;
+	  }
+	 .hide{
+	     display:none;
+	  }
+	 .Stylecolor,.anniu{
+		   width:50px;
+		   border:2px solid #ccc;
+		   position:relative;
+		   top:-260px;
+		   left:30px;
+		}
+		.anniu{
+		   top:-264px;
+		}
+	   .Stylecolor{
+		   width:60px;
+		   height:25px;
+		}

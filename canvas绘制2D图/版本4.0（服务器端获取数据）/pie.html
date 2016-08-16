@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Canvas绘制各种图形(修改版二)</title>
+    <link rel="stylesheet" href="CSS/style.css"/>
+    <script type="text/javascript" src="JS/lib.js"></script>
+    <script type="text/javascript" src="JS/line.js"></script>
+</head>
+<body>
+    <div id="canvas">
+      <div id="left">
+         <p id="line-chart"><a href="index.html">折线图</a></p>
+         <p id="pie-chart"><a href="pie.html">饼状图</a></p>
+      </div>
+      
+      <div id="right">
+              <canvas id="canvas_circle" width="440" height="280"  >
+       </div>
+         
+   
+  </div>
+  <script type="text/javascript">
+ yc.ajaxRequest("http://218.196.14.220:8080/chart3d/chart.action?op=getPieData",{
+       'method':"GET",
+       'send':'null',
+       'jsonResponseListener':listener
+       });    
+    function listener(json){ 
+      var a=[],b=[],c=[];
+      a=json.values.data_arr;
+      b=json.values.color_arr;   
+      c=json.values.text_arr;
+    drawCircle("canvas_circle",a, b, c);
+  }
+</script>
+  
+  
+</body>
+</html>

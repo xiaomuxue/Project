@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Canvas绘制各种图形(修改版二)</title>
+    <link rel="stylesheet" href="CSS/style.css"/>
+    <script type="text/javascript" src="JS/lib.js"></script>
+    <script type="text/javascript" src="JS/line.js"></script>
+    <style>
+      /*#canvas_circle{
+      	margin:100px 130px;
+      }
+		#left p a{
+			text-decoration: none;
+			color:#000;
+		}*/
+    </style>
+</head>
+
+<body>
+    
+
+    <div id="canvas">
+      <div id="left">
+         <p id="line-chart"><a href="index.html">折线图</a></p>
+         <p id="pie-chart"><a href="pie.html">饼状图</a></p>
+      </div>
+      
+      <div id="right">
+              <canvas id="canvas_circle" width="440" height="280"  >
+       </div>
+         
+     
+  </div>
+  <script type="text/javascript">
+ function init() {
+    // 绘制饼图
+    // 比例数据和颜色
+    var data_arr = [0.05, 0.25, 0.4, 0.3];
+    var color_arr = ["#00FF21", "#FFDD00", "#00AACC", "#FF4400"];
+    var text_arr = ["第一季度", "第二季度", "第三季度", "第四季度"];
+    drawCircle("canvas_circle", data_arr, color_arr, text_arr);
+   }
+    //页面加载时执行init()函数
+   window.onload = init;
+</script>
+  
+  
+</body>
+</html>

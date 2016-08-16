@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Canvas绘制各种图形(修改版二)</title>
+    <link rel="stylesheet" href="CSS/style.css"/>
+    <script type="text/javascript" src="JS/lib.js"></script>
+    <script type="text/javascript" src="JS/line.js"></script>
+   
+</head>
+
+<body>
+    
+
+    <div id="canvas">
+      <div id="left">
+         <p id="line-chart"><a href="index.html">折线图</a></p>
+         <p id="pie-chart"><a href="pie.html">饼状图</a></p>
+         <!-- <p id="carte-chart">散点图</p> -->
+      </div>
+      
+      <div id="right">
+          <div>
+            <!-- 更改颜色 -->
+             <input type="color" id="strokeStyle" class="Stylecolor"/>
+             <input type="button" id="btn" value="换色" class="anniu" />
+           <!-- 更改字体 -->
+              <select id="font" class="Stylefont">
+                 <option value="宋体">宋体</option>
+                 <option value="幼圆">幼圆</option>
+                 <option value="微软雅黑">微软雅黑</option>
+                 <option value="cursive">cursive</option>
+                 <option value="Airal">Airal</option>
+             </select>
+             <input type="button" id="btn1" value="更改字体" class="anniu1"/>
+          <!-- 改变XY轴的粗细 -->
+             <input type="number" id="lineWidth"  class="anniu2"/>
+             <input type="button" id="btn3" value="改边框粗细" class="anniu3"/>
+              
+              <canvas id="myCanvas" width="400" height="300"></canvas>
+          </div>
+         
+      </div>
+  </div>
+  
+   <script type="text/javascript">
+	
+		var multiData;
+		yc.addLoadEvent(function(){
+			    multiData = {values:[
+			 { value0:[
+			   {x:"Jan",y:5},
+			   {x:"Feb",y:5},
+			   {x:"Mar",y:80},
+			   {x:"Apr",y:10},
+			   {x:"May",y:30},
+			   {x:"Jun",y:30},
+			   {x:"Jul",y:160},
+			   {x:"Aug",y:10}
+			  ]},
+			  { value1:[
+				{x:"Jan",y:50},
+				{x:"Feb",y:40},
+				{x:"Mar",y:60},
+				{x:"Apr",y:10},
+				{x:"May",y:20},
+				{x:"Jun",y:10},
+				{x:"Jul",y:40},
+				{x:"Aug",y:10}
+			   ]}
+			  ] 
+			 }
+			   LineChart.setKey(["2013","2014"]);
+			   LineChart.setData("myCanvas",multiData,60,"#333","#333",true,true);
+		 });
+		yc.addEvent( "btn","click",function(){
+				    options={};
+			  		options.strokeStyle= yc.$("strokeStyle").value;
+					LineChart.setData("myCanvas",multiData,60,"#333","#333",true,true,options);
+					// LineChart.init();
+			});
+			yc.addEvent( "btn1","click",function(){
+				    options={};
+			  		options.font= yc.$("font").value;
+					LineChart.setData("myCanvas",multiData,60,"#333","#333",true,true,options);
+					
+			});
+			yc.addEvent( "btn3","click",function(){
+				    options={};
+			  		options.linkWidth= yc.$("lineWidth").value;
+					LineChart.setData("myCanvas",multiData,60,"#333","#333",true,true,options);
+					
+			});
+	</script>
+</body>
+</html>
